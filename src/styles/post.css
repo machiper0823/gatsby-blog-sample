@@ -1,0 +1,12 @@
+/* src/styles/post.css */
+.post-header {
+    margin: 80px auto;
+}
+
+.post-date {
+    color: #434343;
+}
+
+.post-body {
+    margin: 80px auto;
+}

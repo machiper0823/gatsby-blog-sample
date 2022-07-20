@@ -1,0 +1,31 @@
+/* src/styles/post-link.css */
+.post-link {
+    margin: 50px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 40px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: block;
+}
+
+.post-link-body {
+    text-overflow: ellipsis;
+    overflow-wrap: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    color: #434343;
+}
+
+.post-link-text {
+    padding: 1rem;
+}
+
+.post-link-date {
+    color: #595959;
+}
+
+.post-link-anchor {
+  color: inherit;
+  text-decoration: none;
+}
