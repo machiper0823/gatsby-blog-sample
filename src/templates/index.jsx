@@ -4,8 +4,9 @@ import PostLink from "../components/post-link"
 import { graphql } from "gatsby"
 import "../styles/index.css"
 import Seo from "../components/seo"
+import Pagination from "../components/pagination"
 
-export default function Home({ data }) {
+export default function Home({ data, pageContext }) {
   const description = `ようこそ${data.site.siteMetadata.title}へ！`
 
   return (
@@ -19,13 +20,21 @@ export default function Home({ data }) {
         const node = edge.node
         return <PostLink key={node.id} node={node} />
       })}
+      <Pagination
+        prevPath={pageContext.previousPagePath}
+        nextPath={pageContext.nextPagePath}
+      />
     </Layout>
   )
 }
 
 export const query = graphql`
-  {
-    allMarkdownRemark {
+  query ($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      skip: $skip
+      limit: $limit
+    ) {
       edges {
         node {
           id
